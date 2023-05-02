@@ -1,0 +1,19 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from custom_interfaces/srv/Sonar.srv
+// generated code does not contain a copyright notice
+
+
+module custom_interfaces {
+  module srv {
+    @verbatim (language="comment", text=
+      "request")
+    struct Sonar_Request {
+      boolean value;
+    };
+    @verbatim (language="comment", text=
+      "response")
+    struct Sonar_Response {
+      boolean success;
+    };
+  };
+};

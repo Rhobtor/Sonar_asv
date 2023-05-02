@@ -1,0 +1,4 @@
+[console_scripts]
+sonar_client = sonar_controller.client_sonar:main
+sonar_service = sonar_controller.service_sonar:main
+

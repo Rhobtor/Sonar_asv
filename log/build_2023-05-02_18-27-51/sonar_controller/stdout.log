@@ -1,0 +1,38 @@
+running egg_info
+creating ../../build/sonar_controller/sonar_controller.egg-info
+writing ../../build/sonar_controller/sonar_controller.egg-info/PKG-INFO
+writing dependency_links to ../../build/sonar_controller/sonar_controller.egg-info/dependency_links.txt
+writing entry points to ../../build/sonar_controller/sonar_controller.egg-info/entry_points.txt
+writing requirements to ../../build/sonar_controller/sonar_controller.egg-info/requires.txt
+writing top-level names to ../../build/sonar_controller/sonar_controller.egg-info/top_level.txt
+writing manifest file '../../build/sonar_controller/sonar_controller.egg-info/SOURCES.txt'
+reading manifest file '../../build/sonar_controller/sonar_controller.egg-info/SOURCES.txt'
+writing manifest file '../../build/sonar_controller/sonar_controller.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/aceti/sonar/build/sonar_controller/build
+creating /home/aceti/sonar/build/sonar_controller/build/lib
+creating /home/aceti/sonar/build/sonar_controller/build/lib/sonar_controller
+copying sonar_controller/service_sonar.py -> /home/aceti/sonar/build/sonar_controller/build/lib/sonar_controller
+copying sonar_controller/__init__.py -> /home/aceti/sonar/build/sonar_controller/build/lib/sonar_controller
+copying sonar_controller/client_sonar.py -> /home/aceti/sonar/build/sonar_controller/build/lib/sonar_controller
+running install
+running install_lib
+creating /home/aceti/sonar/install/sonar_controller/lib/python3.10/site-packages/sonar_controller
+copying /home/aceti/sonar/build/sonar_controller/build/lib/sonar_controller/service_sonar.py -> /home/aceti/sonar/install/sonar_controller/lib/python3.10/site-packages/sonar_controller
+copying /home/aceti/sonar/build/sonar_controller/build/lib/sonar_controller/__init__.py -> /home/aceti/sonar/install/sonar_controller/lib/python3.10/site-packages/sonar_controller
+copying /home/aceti/sonar/build/sonar_controller/build/lib/sonar_controller/client_sonar.py -> /home/aceti/sonar/install/sonar_controller/lib/python3.10/site-packages/sonar_controller
+byte-compiling /home/aceti/sonar/install/sonar_controller/lib/python3.10/site-packages/sonar_controller/service_sonar.py to service_sonar.cpython-310.pyc
+byte-compiling /home/aceti/sonar/install/sonar_controller/lib/python3.10/site-packages/sonar_controller/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/aceti/sonar/install/sonar_controller/lib/python3.10/site-packages/sonar_controller/client_sonar.py to client_sonar.cpython-310.pyc
+running install_data
+creating /home/aceti/sonar/install/sonar_controller/share/ament_index
+creating /home/aceti/sonar/install/sonar_controller/share/ament_index/resource_index
+creating /home/aceti/sonar/install/sonar_controller/share/ament_index/resource_index/packages
+copying resource/sonar_controller -> /home/aceti/sonar/install/sonar_controller/share/ament_index/resource_index/packages
+copying package.xml -> /home/aceti/sonar/install/sonar_controller/share/sonar_controller
+running install_egg_info
+Copying ../../build/sonar_controller/sonar_controller.egg-info to /home/aceti/sonar/install/sonar_controller/lib/python3.10/site-packages/sonar_controller-0.0.0-py3.10.egg-info
+running install_scripts
+Installing sonar_service=sonar_controller.service_sonar:mainsonar_client script to /home/aceti/sonar/install/sonar_controller/lib/sonar_controller
+writing list of installed files to '/home/aceti/sonar/build/sonar_controller/install.log'
