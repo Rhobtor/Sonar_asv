@@ -1,0 +1,25 @@
+[0.519s] Invoking command in '/home/aceti/sonar/src/sonar_controller': CMAKE_PREFIX_PATH=/home/aceti/sonar/install/custom_interfaces:/home/aceti/ros2_ws/install/head_controller LD_LIBRARY_PATH=/home/aceti/sonar/install/custom_interfaces/lib:/home/aceti/ros2_ws/install/head_controller/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib PYTHONPATH=/home/aceti/sonar/build/sonar_controller/prefix_override:/home/aceti/sonar/install/sonar_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/sonar_controller build --build-base /home/aceti/sonar/build/sonar_controller/build install --record /home/aceti/sonar/build/sonar_controller/install.log --single-version-externally-managed
+[0.718s] running egg_info
+[0.718s] writing ../../build/sonar_controller/sonar_controller.egg-info/PKG-INFO
+[0.719s] writing dependency_links to ../../build/sonar_controller/sonar_controller.egg-info/dependency_links.txt
+[0.719s] writing entry points to ../../build/sonar_controller/sonar_controller.egg-info/entry_points.txt
+[0.719s] writing requirements to ../../build/sonar_controller/sonar_controller.egg-info/requires.txt
+[0.719s] writing top-level names to ../../build/sonar_controller/sonar_controller.egg-info/top_level.txt
+[0.721s] reading manifest file '../../build/sonar_controller/sonar_controller.egg-info/SOURCES.txt'
+[0.722s] writing manifest file '../../build/sonar_controller/sonar_controller.egg-info/SOURCES.txt'
+[0.722s] running build
+[0.722s] running build_py
+[0.723s] copying sonar_controller/service_sonar.py -> /home/aceti/sonar/build/sonar_controller/build/lib/sonar_controller
+[0.723s] running install
+[0.723s] running install_lib
+[0.724s] copying /home/aceti/sonar/build/sonar_controller/build/lib/sonar_controller/service_sonar.py -> /home/aceti/sonar/install/sonar_controller/lib/python3.10/site-packages/sonar_controller
+[0.725s] byte-compiling /home/aceti/sonar/install/sonar_controller/lib/python3.10/site-packages/sonar_controller/service_sonar.py to service_sonar.cpython-310.pyc
+[0.726s] running install_data
+[0.727s] running install_egg_info
+[0.729s] removing '/home/aceti/sonar/install/sonar_controller/lib/python3.10/site-packages/sonar_controller-0.0.0-py3.10.egg-info' (and everything under it)
+[0.729s] Copying ../../build/sonar_controller/sonar_controller.egg-info to /home/aceti/sonar/install/sonar_controller/lib/python3.10/site-packages/sonar_controller-0.0.0-py3.10.egg-info
+[0.730s] running install_scripts
+[0.745s] Installing sonar_client script to /home/aceti/sonar/install/sonar_controller/lib/sonar_controller
+[0.745s] Installing sonar_service script to /home/aceti/sonar/install/sonar_controller/lib/sonar_controller
+[0.746s] writing list of installed files to '/home/aceti/sonar/build/sonar_controller/install.log'
+[0.766s] Invoked command in '/home/aceti/sonar/src/sonar_controller' returned '0': CMAKE_PREFIX_PATH=/home/aceti/sonar/install/custom_interfaces:/home/aceti/ros2_ws/install/head_controller LD_LIBRARY_PATH=/home/aceti/sonar/install/custom_interfaces/lib:/home/aceti/ros2_ws/install/head_controller/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib PYTHONPATH=/home/aceti/sonar/build/sonar_controller/prefix_override:/home/aceti/sonar/install/sonar_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/sonar_controller build --build-base /home/aceti/sonar/build/sonar_controller/build install --record /home/aceti/sonar/build/sonar_controller/install.log --single-version-externally-managed

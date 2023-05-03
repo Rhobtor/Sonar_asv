@@ -204,4 +204,6 @@ CMakeFiles/custom_interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_ge
  /home/aceti/sonar/build/custom_interfaces/rosidl_generator_c/custom_interfaces/srv/detail/sonar__type_support.h \
  /home/aceti/sonar/build/custom_interfaces/rosidl_generator_c/custom_interfaces/msg/rosidl_generator_c__visibility_control.h \
  /home/aceti/sonar/build/custom_interfaces/rosidl_generator_c/custom_interfaces/srv/detail/sonar__struct.h \
+ /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string.h \
+ /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h \
  /home/aceti/sonar/build/custom_interfaces/rosidl_generator_c/custom_interfaces/srv/detail/sonar__functions.h

@@ -38,7 +38,7 @@ struct Sonar_Request_
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
-      this->value = false;
+      this->structure_needs_at_least_one_member = 0;
     }
   }
 
@@ -48,22 +48,15 @@ struct Sonar_Request_
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
-      this->value = false;
+      this->structure_needs_at_least_one_member = 0;
     }
   }
 
   // field types and members
-  using _value_type =
-    bool;
-  _value_type value;
+  using _structure_needs_at_least_one_member_type =
+    uint8_t;
+  _structure_needs_at_least_one_member_type structure_needs_at_least_one_member;
 
-  // setters for named parameter idiom
-  Type & set__value(
-    const bool & _arg)
-  {
-    this->value = _arg;
-    return *this;
-  }
 
   // constant declarations
 
@@ -107,7 +100,7 @@ struct Sonar_Request_
   // comparison operators
   bool operator==(const Sonar_Request_ & other) const
   {
-    if (this->value != other.value) {
+    if (this->structure_needs_at_least_one_member != other.structure_needs_at_least_one_member) {
       return false;
     }
     return true;
@@ -153,16 +146,18 @@ struct Sonar_Response_
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
       this->success = false;
+      this->message = "";
     }
   }
 
   explicit Sonar_Response_(const ContainerAllocator & _alloc, rosidl_runtime_cpp::MessageInitialization _init = rosidl_runtime_cpp::MessageInitialization::ALL)
+  : message(_alloc)
   {
-    (void)_alloc;
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
       this->success = false;
+      this->message = "";
     }
   }
 
@@ -170,12 +165,21 @@ struct Sonar_Response_
   using _success_type =
     bool;
   _success_type success;
+  using _message_type =
+    std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>;
+  _message_type message;
 
   // setters for named parameter idiom
   Type & set__success(
     const bool & _arg)
   {
     this->success = _arg;
+    return *this;
+  }
+  Type & set__message(
+    const std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>> & _arg)
+  {
+    this->message = _arg;
     return *this;
   }
 
@@ -222,6 +226,9 @@ struct Sonar_Response_
   bool operator==(const Sonar_Response_ & other) const
   {
     if (this->success != other.success) {
+      return false;
+    }
+    if (this->message != other.message) {
       return false;
     }
     return true;

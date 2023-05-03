@@ -1,5 +1,6 @@
 #request
-bool value 
+# bool value 
 ---
 #response
 bool success
+string message

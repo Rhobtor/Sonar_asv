@@ -12,7 +12,7 @@ class Sonarasync(Node):
         
     def send_request(self):
         request = Sonar.Request()
-        request.value= bool(sys.argv[1])
+        # request.value= bool(sys.argv[1])
         self.future=self.client.call_async(request)
 
 
@@ -32,6 +32,9 @@ def main(args=None):
                     f"Service call failes {e}"
                 )
             else:
+                move_client.get_logger().info(
+                    f"Result of check {response.message}"
+                )
                 move_client.get_logger().info(
                     f"Result of check {response.success}"
                 )

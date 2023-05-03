@@ -49,9 +49,9 @@ static bool _Sonar_Request__cdr_serialize(
     return false;
   }
   const _Sonar_Request__ros_msg_type * ros_message = static_cast<const _Sonar_Request__ros_msg_type *>(untyped_ros_message);
-  // Field name: value
+  // Field name: structure_needs_at_least_one_member
   {
-    cdr << (ros_message->value ? true : false);
+    cdr << ros_message->structure_needs_at_least_one_member;
   }
 
   return true;
@@ -66,11 +66,9 @@ static bool _Sonar_Request__cdr_deserialize(
     return false;
   }
   _Sonar_Request__ros_msg_type * ros_message = static_cast<_Sonar_Request__ros_msg_type *>(untyped_ros_message);
-  // Field name: value
+  // Field name: structure_needs_at_least_one_member
   {
-    uint8_t tmp;
-    cdr >> tmp;
-    ros_message->value = tmp ? true : false;
+    cdr >> ros_message->structure_needs_at_least_one_member;
   }
 
   return true;
@@ -90,9 +88,9 @@ size_t get_serialized_size_custom_interfaces__srv__Sonar_Request(
   (void)padding;
   (void)wchar_size;
 
-  // field.name value
+  // field.name structure_needs_at_least_one_member
   {
-    size_t item_size = sizeof(ros_message->value);
+    size_t item_size = sizeof(ros_message->structure_needs_at_least_one_member);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -123,7 +121,7 @@ size_t max_serialized_size_custom_interfaces__srv__Sonar_Request(
   full_bounded = true;
   is_plain = true;
 
-  // member: value
+  // member: structure_needs_at_least_one_member
   {
     size_t array_size = 1;
 
@@ -213,6 +211,8 @@ extern "C"
 {
 #endif
 
+#include "rosidl_runtime_c/string.h"  // message
+#include "rosidl_runtime_c/string_functions.h"  // message
 
 // forward declare type support functions
 
@@ -233,6 +233,20 @@ static bool _Sonar_Response__cdr_serialize(
     cdr << (ros_message->success ? true : false);
   }
 
+  // Field name: message
+  {
+    const rosidl_runtime_c__String * str = &ros_message->message;
+    if (str->capacity == 0 || str->capacity <= str->size) {
+      fprintf(stderr, "string capacity not greater than size\n");
+      return false;
+    }
+    if (str->data[str->size] != '\0') {
+      fprintf(stderr, "string not null-terminated\n");
+      return false;
+    }
+    cdr << str->data;
+  }
+
   return true;
 }
 
@@ -250,6 +264,22 @@ static bool _Sonar_Response__cdr_deserialize(
     uint8_t tmp;
     cdr >> tmp;
     ros_message->success = tmp ? true : false;
+  }
+
+  // Field name: message
+  {
+    std::string tmp;
+    cdr >> tmp;
+    if (!ros_message->message.data) {
+      rosidl_runtime_c__String__init(&ros_message->message);
+    }
+    bool succeeded = rosidl_runtime_c__String__assign(
+      &ros_message->message,
+      tmp.c_str());
+    if (!succeeded) {
+      fprintf(stderr, "failed to assign string into field 'message'\n");
+      return false;
+    }
   }
 
   return true;
@@ -275,6 +305,10 @@ size_t get_serialized_size_custom_interfaces__srv__Sonar_Response(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
+  // field.name message
+  current_alignment += padding +
+    eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
+    (ros_message->message.size + 1);
 
   return current_alignment - initial_alignment;
 }
@@ -307,6 +341,18 @@ size_t max_serialized_size_custom_interfaces__srv__Sonar_Response(
     size_t array_size = 1;
 
     current_alignment += array_size * sizeof(uint8_t);
+  }
+  // member: message
+  {
+    size_t array_size = 1;
+
+    full_bounded = false;
+    is_plain = false;
+    for (size_t index = 0; index < array_size; ++index) {
+      current_alignment += padding +
+        eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
+        1;
+    }
   }
 
   return current_alignment - initial_alignment;

@@ -39,14 +39,14 @@ void Sonar_Request_fini_function(void * message_memory)
 
 static const ::rosidl_typesupport_introspection_cpp::MessageMember Sonar_Request_message_member_array[1] = {
   {
-    "value",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
+    "structure_needs_at_least_one_member",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(custom_interfaces::srv::Sonar_Request, value),  // bytes offset in struct
+    offsetof(custom_interfaces::srv::Sonar_Request, structure_needs_at_least_one_member),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer
@@ -156,7 +156,7 @@ void Sonar_Response_fini_function(void * message_memory)
   typed_message->~Sonar_Response();
 }
 
-static const ::rosidl_typesupport_introspection_cpp::MessageMember Sonar_Response_message_member_array[1] = {
+static const ::rosidl_typesupport_introspection_cpp::MessageMember Sonar_Response_message_member_array[2] = {
   {
     "success",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
@@ -173,13 +173,30 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember Sonar_Respons
     nullptr,  // fetch(index, &value) function pointer
     nullptr,  // assign(index, value) function pointer
     nullptr  // resize(index) function pointer
+  },
+  {
+    "message",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_STRING,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(custom_interfaces::srv::Sonar_Response, message),  // bytes offset in struct
+    nullptr,  // default value
+    nullptr,  // size() function pointer
+    nullptr,  // get_const(index) function pointer
+    nullptr,  // get(index) function pointer
+    nullptr,  // fetch(index, &value) function pointer
+    nullptr,  // assign(index, value) function pointer
+    nullptr  // resize(index) function pointer
   }
 };
 
 static const ::rosidl_typesupport_introspection_cpp::MessageMembers Sonar_Response_message_members = {
   "custom_interfaces::srv",  // message namespace
   "Sonar_Response",  // message name
-  1,  // number of fields
+  2,  // number of fields
   sizeof(custom_interfaces::srv::Sonar_Response),
   Sonar_Response_message_member_array,  // message members
   Sonar_Response_init_function,  // function to initialize message memory (memory has to be allocated)

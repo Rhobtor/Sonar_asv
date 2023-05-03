@@ -16,7 +16,7 @@ custom_interfaces__srv__Sonar_Request__init(custom_interfaces__srv__Sonar_Reques
   if (!msg) {
     return false;
   }
-  // value
+  // structure_needs_at_least_one_member
   return true;
 }
 
@@ -26,7 +26,7 @@ custom_interfaces__srv__Sonar_Request__fini(custom_interfaces__srv__Sonar_Reques
   if (!msg) {
     return;
   }
-  // value
+  // structure_needs_at_least_one_member
 }
 
 bool
@@ -35,8 +35,8 @@ custom_interfaces__srv__Sonar_Request__are_equal(const custom_interfaces__srv__S
   if (!lhs || !rhs) {
     return false;
   }
-  // value
-  if (lhs->value != rhs->value) {
+  // structure_needs_at_least_one_member
+  if (lhs->structure_needs_at_least_one_member != rhs->structure_needs_at_least_one_member) {
     return false;
   }
   return true;
@@ -50,8 +50,8 @@ custom_interfaces__srv__Sonar_Request__copy(
   if (!input || !output) {
     return false;
   }
-  // value
-  output->value = input->value;
+  // structure_needs_at_least_one_member
+  output->structure_needs_at_least_one_member = input->structure_needs_at_least_one_member;
   return true;
 }
 
@@ -235,6 +235,10 @@ custom_interfaces__srv__Sonar_Request__Sequence__copy(
 }
 
 
+// Include directives for member types
+// Member `message`
+#include "rosidl_runtime_c/string_functions.h"
+
 bool
 custom_interfaces__srv__Sonar_Response__init(custom_interfaces__srv__Sonar_Response * msg)
 {
@@ -242,6 +246,11 @@ custom_interfaces__srv__Sonar_Response__init(custom_interfaces__srv__Sonar_Respo
     return false;
   }
   // success
+  // message
+  if (!rosidl_runtime_c__String__init(&msg->message)) {
+    custom_interfaces__srv__Sonar_Response__fini(msg);
+    return false;
+  }
   return true;
 }
 
@@ -252,6 +261,8 @@ custom_interfaces__srv__Sonar_Response__fini(custom_interfaces__srv__Sonar_Respo
     return;
   }
   // success
+  // message
+  rosidl_runtime_c__String__fini(&msg->message);
 }
 
 bool
@@ -262,6 +273,12 @@ custom_interfaces__srv__Sonar_Response__are_equal(const custom_interfaces__srv__
   }
   // success
   if (lhs->success != rhs->success) {
+    return false;
+  }
+  // message
+  if (!rosidl_runtime_c__String__are_equal(
+      &(lhs->message), &(rhs->message)))
+  {
     return false;
   }
   return true;
@@ -277,6 +294,12 @@ custom_interfaces__srv__Sonar_Response__copy(
   }
   // success
   output->success = input->success;
+  // message
+  if (!rosidl_runtime_c__String__copy(
+      &(input->message), &(output->message)))
+  {
+    return false;
+  }
   return true;
 }
 

@@ -65,6 +65,9 @@ CMakeFiles/custom_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_type
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
   rosidl_generator_c/custom_interfaces/msg/rosidl_generator_c__visibility_control.h \
   rosidl_generator_c/custom_interfaces/srv/detail/sonar__struct.h \
+  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string.h \
+  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h \
+  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string_functions.h \
   /opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/service_introspection.h
 
 
@@ -75,6 +78,8 @@ CMakeFiles/custom_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_type
 /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
 
 /opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/identifier.h:
+
+/opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string_functions.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
 
@@ -103,6 +108,8 @@ rosidl_typesupport_introspection_c/custom_interfaces/msg/rosidl_typesupport_intr
 /usr/include/x86_64-linux-gnu/bits/waitflags.h:
 
 /usr/include/x86_64-linux-gnu/bits/wordsize.h:
+
+/opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string.h:
 
 /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/visibility_control.h:
 
@@ -187,6 +194,8 @@ rosidl_generator_c/custom_interfaces/srv/detail/sonar__functions.h:
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
 
 /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
+
+/opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h:
 

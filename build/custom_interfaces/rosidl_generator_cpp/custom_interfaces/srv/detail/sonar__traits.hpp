@@ -24,28 +24,17 @@ inline void to_flow_style_yaml(
   const Sonar_Request & msg,
   std::ostream & out)
 {
-  out << "{";
-  // member: value
-  {
-    out << "value: ";
-    rosidl_generator_traits::value_to_yaml(msg.value, out);
-  }
-  out << "}";
+  (void)msg;
+  out << "null";
 }  // NOLINT(readability/fn_size)
 
 inline void to_block_style_yaml(
   const Sonar_Request & msg,
   std::ostream & out, size_t indentation = 0)
 {
-  // member: value
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    out << "value: ";
-    rosidl_generator_traits::value_to_yaml(msg.value, out);
-    out << "\n";
-  }
+  (void)msg;
+  (void)indentation;
+  out << "null\n";
 }  // NOLINT(readability/fn_size)
 
 inline std::string to_yaml(const Sonar_Request & msg, bool use_flow_style = false)
@@ -121,6 +110,13 @@ inline void to_flow_style_yaml(
   {
     out << "success: ";
     rosidl_generator_traits::value_to_yaml(msg.success, out);
+    out << ", ";
+  }
+
+  // member: message
+  {
+    out << "message: ";
+    rosidl_generator_traits::value_to_yaml(msg.message, out);
   }
   out << "}";
 }  // NOLINT(readability/fn_size)
@@ -136,6 +132,16 @@ inline void to_block_style_yaml(
     }
     out << "success: ";
     rosidl_generator_traits::value_to_yaml(msg.success, out);
+    out << "\n";
+  }
+
+  // member: message
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "message: ";
+    rosidl_generator_traits::value_to_yaml(msg.message, out);
     out << "\n";
   }
 }  // NOLINT(readability/fn_size)
@@ -186,11 +192,11 @@ inline const char * name<custom_interfaces::srv::Sonar_Response>()
 
 template<>
 struct has_fixed_size<custom_interfaces::srv::Sonar_Response>
-  : std::integral_constant<bool, true> {};
+  : std::integral_constant<bool, false> {};
 
 template<>
 struct has_bounded_size<custom_interfaces::srv::Sonar_Response>
-  : std::integral_constant<bool, true> {};
+  : std::integral_constant<bool, false> {};
 
 template<>
 struct is_message<custom_interfaces::srv::Sonar_Response>

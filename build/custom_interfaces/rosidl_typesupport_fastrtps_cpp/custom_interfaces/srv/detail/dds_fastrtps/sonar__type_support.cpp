@@ -32,8 +32,8 @@ cdr_serialize(
   const custom_interfaces::srv::Sonar_Request & ros_message,
   eprosima::fastcdr::Cdr & cdr)
 {
-  // Member: value
-  cdr << (ros_message.value ? true : false);
+  // Member: structure_needs_at_least_one_member
+  cdr << ros_message.structure_needs_at_least_one_member;
   return true;
 }
 
@@ -43,12 +43,8 @@ cdr_deserialize(
   eprosima::fastcdr::Cdr & cdr,
   custom_interfaces::srv::Sonar_Request & ros_message)
 {
-  // Member: value
-  {
-    uint8_t tmp;
-    cdr >> tmp;
-    ros_message.value = tmp ? true : false;
-  }
+  // Member: structure_needs_at_least_one_member
+  cdr >> ros_message.structure_needs_at_least_one_member;
 
   return true;
 }
@@ -66,9 +62,9 @@ get_serialized_size(
   (void)padding;
   (void)wchar_size;
 
-  // Member: value
+  // Member: structure_needs_at_least_one_member
   {
-    size_t item_size = sizeof(ros_message.value);
+    size_t item_size = sizeof(ros_message.structure_needs_at_least_one_member);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -94,7 +90,7 @@ max_serialized_size_Sonar_Request(
   is_plain = true;
 
 
-  // Member: value
+  // Member: structure_needs_at_least_one_member
   {
     size_t array_size = 1;
 
@@ -234,6 +230,8 @@ cdr_serialize(
 {
   // Member: success
   cdr << (ros_message.success ? true : false);
+  // Member: message
+  cdr << ros_message.message;
   return true;
 }
 
@@ -249,6 +247,9 @@ cdr_deserialize(
     cdr >> tmp;
     ros_message.success = tmp ? true : false;
   }
+
+  // Member: message
+  cdr >> ros_message.message;
 
   return true;
 }
@@ -272,6 +273,10 @@ get_serialized_size(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
+  // Member: message
+  current_alignment += padding +
+    eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
+    (ros_message.message.size() + 1);
 
   return current_alignment - initial_alignment;
 }
@@ -299,6 +304,19 @@ max_serialized_size_Sonar_Response(
     size_t array_size = 1;
 
     current_alignment += array_size * sizeof(uint8_t);
+  }
+
+  // Member: message
+  {
+    size_t array_size = 1;
+
+    full_bounded = false;
+    is_plain = false;
+    for (size_t index = 0; index < array_size; ++index) {
+      current_alignment += padding +
+        eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
+        1;
+    }
   }
 
   return current_alignment - initial_alignment;
