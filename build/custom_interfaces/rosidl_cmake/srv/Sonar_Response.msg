@@ -1,3 +1,4 @@
 
 #response
 bool success
+string message

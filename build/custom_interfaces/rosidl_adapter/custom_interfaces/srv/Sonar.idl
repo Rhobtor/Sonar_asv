@@ -6,14 +6,17 @@
 module custom_interfaces {
   module srv {
     @verbatim (language="comment", text=
-      "request")
+      "request" "\n"
+      " bool value ")
     struct Sonar_Request {
-      boolean value;
+      uint8 structure_needs_at_least_one_member;
     };
     @verbatim (language="comment", text=
       "response")
     struct Sonar_Response {
       boolean success;
+
+      string message;
     };
   };
 };

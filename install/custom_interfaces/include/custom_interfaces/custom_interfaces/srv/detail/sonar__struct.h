@@ -20,7 +20,7 @@ extern "C"
 /// Struct defined in srv/Sonar in the package custom_interfaces.
 typedef struct custom_interfaces__srv__Sonar_Request
 {
-  bool value;
+  uint8_t structure_needs_at_least_one_member;
 } custom_interfaces__srv__Sonar_Request;
 
 // Struct for a sequence of custom_interfaces__srv__Sonar_Request.
@@ -36,10 +36,15 @@ typedef struct custom_interfaces__srv__Sonar_Request__Sequence
 
 // Constants defined in the message
 
+// Include directives for member types
+// Member 'message'
+#include "rosidl_runtime_c/string.h"
+
 /// Struct defined in srv/Sonar in the package custom_interfaces.
 typedef struct custom_interfaces__srv__Sonar_Response
 {
   bool success;
+  rosidl_runtime_c__String message;
 } custom_interfaces__srv__Sonar_Response;
 
 // Struct for a sequence of custom_interfaces__srv__Sonar_Response.
