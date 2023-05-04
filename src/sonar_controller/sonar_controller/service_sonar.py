@@ -17,6 +17,7 @@ class SonarService(Node):
         self.service = self.create_service(Sonar, "sonar", self.sonar_callback)
         self.port_monitor_thread = threading.Thread(target=self.monitor_usb_port, daemon=True)
         self.port_monitor_thread.start()
+<<<<<<< HEAD
  # funcion para buscar por los puertos USB el numero de serie del sonar, si coincide el numero de serie obtiene el puerto donde se ubica, ademas en esta fucnion lo que realizara sera una busqueda continua del sistema.
  #  Se realiza para cuando hay una desconexion del USB y a continuacion conectamos de nuevo pueda volver a funcionar sin que tengamos que levantar el servicio de nuevo. 
  # La busqueda se realiza de manera constante cuando no se encuentra el dispositivo con el numero de serie.
@@ -32,6 +33,31 @@ class SonarService(Node):
                 self.ping_device = None
                 self.remembered_port = None
 
+=======
+
+
+ 
+ 
+ 
+  # funcion para buscar por los puertos USB el numero de serie del sonar, si coincide el numero de serie obtiene el puerto donde se ubica, ademas en esta fucnion lo que realizara sera una busqueda continua del sistema.
+ #  Se realiza para cuando hay una desconexion del USB y a continuacion conectamos de nuevo pueda volver a funcionar sin que tengamos que levantar el servicio de nuevo. 
+ # La busqueda se realiza de manera constante cuando no se encuentra el dispositivo con el numero de serie.
+ 
+
+
+    def monitor_usb_port(self):
+        while True:
+            arduino_ports = [
+                p.device
+                for p in serial.tools.list_ports.comports()
+                if p.serial_number == "DM00R2J8" #Numero de serie del sonar, cambiar con el que se este utilizando
+            ]
+            if self.remembered_port not in arduino_ports:
+                self.get_logger().info("USB device disconnected")
+                self.ping_device = None
+                self.remembered_port = None
+
+>>>>>>> v2
             if not self.ping_device:
                 for port in arduino_ports:
                     try:
@@ -48,6 +74,7 @@ class SonarService(Node):
             rclpy.spin_once(self, timeout_sec=0.5)
 
             
+<<<<<<< HEAD
      
 # funcion para la comprobacion del sonar , se llama dentro de la clase Ping dada por el sonar a la funcion get_ping_enable que muestra 
 # si esta activo la señal de salida acustica, que es la que se encarga de realizar la mediciones
@@ -61,6 +88,22 @@ class SonarService(Node):
                 self.get_logger().info("Sonar not working")
         return response
 
+=======
+
+# funcion para la comprobacion del sonar , se llama dentro de la clase Ping dada por el sonar a la funcion get_ping_enable que muestra 
+# si esta activo la señal de salida acustica, que es la que se encarga de realizar la mediciones     
+
+    def sonar_callback(self, request, response):
+        if self.ping_device:
+            if self.ping_device.get_ping_enable:
+                response.success = True
+                self.get_logger().info("Sonar working")
+            else:
+                response.success = False
+                self.get_logger().info("Sonar not working")
+        return response
+
+>>>>>>> v2
 
 def main(args=None):
     rclpy.init(args=args)
