@@ -1,6 +1,7 @@
 {
   "package_name": "custom_interfaces",
   "non_idl_tuples": [
-    "/home/aceti/sonar/src/custom_interfaces:srv/Sonar.srv"
+    "/home/aceti/sonar/src/custom_interfaces:srv/Sonar.srv",
+    "/home/aceti/sonar/src/custom_interfaces:srv/SerialNumber.srv"
   ]
 }

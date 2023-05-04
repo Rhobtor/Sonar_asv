@@ -4,17 +4,20 @@ import rclpy
 from rclpy.node import Node
 import serial
 import serial.tools.list_ports
-from custom_interfaces.srv import Sonar
+from custom_interfaces.srv import Sonar , SerialNumber
 import threading
 
 
 class SonarService(Node):
     def __init__(self):
         super().__init__("sonar_service")
+        self._serial_number = None
         self.remembered_port = None
         self.ping_device = None
         self.ping_thread = None
+        self.connected = False
         self.service = self.create_service(Sonar, "sonar", self.sonar_callback)
+        self.serial_number_service = self.create_service(SerialNumber,"get_serial_number",self.serial_number_callback)
         self.port_monitor_thread = threading.Thread(target=self.monitor_usb_port, daemon=True)
         self.port_monitor_thread.start()
 
@@ -22,10 +25,16 @@ class SonarService(Node):
  
  
  
-  # funcion para buscar por los puertos USB el numero de serie del sonar, si coincide el numero de serie obtiene el puerto donde se ubica, ademas en esta fucnion lo que realizara sera una busqueda continua del sistema.
+# funcion para buscar por los puertos USB el numero de serie del sonar, si coincide el numero de serie obtiene el puerto donde se ubica, ademas en esta fucnion lo que realizara sera una busqueda continua del sistema.
  #  Se realiza para cuando hay una desconexion del USB y a continuacion conectamos de nuevo pueda volver a funcionar sin que tengamos que levantar el servicio de nuevo. 
  # La busqueda se realiza de manera constante cuando no se encuentra el dispositivo con el numero de serie.
  
+    def serial_number_callback(self, request, response):
+        self._serial_number = request.serial_number
+        self.port_monitor_thread = threading.Thread(target=self.monitor_usb_port, daemon=True)
+        self.port_monitor_thread.start()
+        response.success = self.connected
+        return response
 
 
     def monitor_usb_port(self):
@@ -33,7 +42,7 @@ class SonarService(Node):
             arduino_ports = [
                 p.device
                 for p in serial.tools.list_ports.comports()
-                if p.serial_number == "DM00R2J8" #Numero de serie del sonar, cambiar con el que se este utilizando
+                if p.serial_number == self._serial_number #Numero de serie del sonar, cambiar con el que se este utilizando
             ]
             if self.remembered_port not in arduino_ports:
                 self.get_logger().info("USB device disconnected")

@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "../rosidl_generator_py/custom_interfaces/_custom_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c"
   "../rosidl_generator_py/custom_interfaces/_custom_interfaces_s.ep.rosidl_typesupport_introspection_c.c"
   "../rosidl_generator_py/custom_interfaces/srv/__init__.py"
+  "../rosidl_generator_py/custom_interfaces/srv/_serial_number.py"
+  "../rosidl_generator_py/custom_interfaces/srv/_serial_number_s.c"
   "../rosidl_generator_py/custom_interfaces/srv/_sonar.py"
   "../rosidl_generator_py/custom_interfaces/srv/_sonar_s.c"
   "CMakeFiles/custom_interfaces__py"

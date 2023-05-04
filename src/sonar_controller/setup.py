@@ -21,7 +21,9 @@ setup(
     entry_points={
         'console_scripts': [
             'sonar_service=sonar_controller.service_sonar:main',
-            'sonar_client=sonar_controller.client_sonar:main'
+            'sonar_client=sonar_controller.client_sonar:main',
+            'Serial_client=sonar_controller.client_serial:main'
+
         ],
     },
 )

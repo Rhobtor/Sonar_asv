@@ -69,6 +69,9 @@ include CMakeFiles/custom_interfaces.dir/progress.make
 CMakeFiles/custom_interfaces: /home/aceti/sonar/src/custom_interfaces/srv/Sonar.srv
 CMakeFiles/custom_interfaces: rosidl_cmake/srv/Sonar_Request.msg
 CMakeFiles/custom_interfaces: rosidl_cmake/srv/Sonar_Response.msg
+CMakeFiles/custom_interfaces: /home/aceti/sonar/src/custom_interfaces/srv/SerialNumber.srv
+CMakeFiles/custom_interfaces: rosidl_cmake/srv/SerialNumber_Request.msg
+CMakeFiles/custom_interfaces: rosidl_cmake/srv/SerialNumber_Response.msg
 
 custom_interfaces: CMakeFiles/custom_interfaces
 custom_interfaces: CMakeFiles/custom_interfaces.dir/build.make

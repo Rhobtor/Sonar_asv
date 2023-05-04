@@ -1,9 +1,13 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/custom_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/custom_interfaces/srv/detail/dds_fastrtps/serial_number__type_support.cpp.o"
+  "CMakeFiles/custom_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/custom_interfaces/srv/detail/dds_fastrtps/serial_number__type_support.cpp.o.d"
   "CMakeFiles/custom_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/custom_interfaces/srv/detail/dds_fastrtps/sonar__type_support.cpp.o"
   "CMakeFiles/custom_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/custom_interfaces/srv/detail/dds_fastrtps/sonar__type_support.cpp.o.d"
   "libcustom_interfaces__rosidl_typesupport_fastrtps_cpp.pdb"
   "libcustom_interfaces__rosidl_typesupport_fastrtps_cpp.so"
+  "rosidl_typesupport_fastrtps_cpp/custom_interfaces/srv/detail/dds_fastrtps/serial_number__type_support.cpp"
   "rosidl_typesupport_fastrtps_cpp/custom_interfaces/srv/detail/dds_fastrtps/sonar__type_support.cpp"
+  "rosidl_typesupport_fastrtps_cpp/custom_interfaces/srv/detail/serial_number__rosidl_typesupport_fastrtps_cpp.hpp"
   "rosidl_typesupport_fastrtps_cpp/custom_interfaces/srv/detail/sonar__rosidl_typesupport_fastrtps_cpp.hpp"
 )
 

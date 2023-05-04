@@ -1,3 +1,7 @@
+srv/SerialNumber.idl
+srv/SerialNumber.srv
+srv/SerialNumber_Request.msg
+srv/SerialNumber_Response.msg
 srv/Sonar.idl
 srv/Sonar.srv
 srv/Sonar_Request.msg

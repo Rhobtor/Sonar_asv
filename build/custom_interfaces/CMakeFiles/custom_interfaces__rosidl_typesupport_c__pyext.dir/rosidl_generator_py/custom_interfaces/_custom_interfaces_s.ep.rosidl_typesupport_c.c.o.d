@@ -206,4 +206,7 @@ CMakeFiles/custom_interfaces__rosidl_typesupport_c__pyext.dir/rosidl_generator_p
  /home/aceti/sonar/build/custom_interfaces/rosidl_generator_c/custom_interfaces/srv/detail/sonar__struct.h \
  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string.h \
  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h \
- /home/aceti/sonar/build/custom_interfaces/rosidl_generator_c/custom_interfaces/srv/detail/sonar__functions.h
+ /home/aceti/sonar/build/custom_interfaces/rosidl_generator_c/custom_interfaces/srv/detail/sonar__functions.h \
+ /home/aceti/sonar/build/custom_interfaces/rosidl_generator_c/custom_interfaces/srv/detail/serial_number__type_support.h \
+ /home/aceti/sonar/build/custom_interfaces/rosidl_generator_c/custom_interfaces/srv/detail/serial_number__struct.h \
+ /home/aceti/sonar/build/custom_interfaces/rosidl_generator_c/custom_interfaces/srv/detail/serial_number__functions.h

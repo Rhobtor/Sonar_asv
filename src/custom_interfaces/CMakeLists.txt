@@ -17,7 +17,7 @@ find_package(rosidl_default_generators REQUIRED)
 
 set(srv_files
   "srv/Sonar.srv"
-
+  "srv/SerialNumber.srv"
   )
 
 rosidl_generate_interfaces(${PROJECT_NAME}

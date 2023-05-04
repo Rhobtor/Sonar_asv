@@ -247,8 +247,15 @@ CMakeFiles/custom_interfaces__rosidl_typesupport_introspection_c__pyext.dir/rosi
   rosidl_generator_c/custom_interfaces/srv/detail/sonar__struct.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h \
-  rosidl_generator_c/custom_interfaces/srv/detail/sonar__functions.h
+  rosidl_generator_c/custom_interfaces/srv/detail/sonar__functions.h \
+  rosidl_generator_c/custom_interfaces/srv/detail/serial_number__type_support.h \
+  rosidl_generator_c/custom_interfaces/srv/detail/serial_number__struct.h \
+  rosidl_generator_c/custom_interfaces/srv/detail/serial_number__functions.h
 
+
+rosidl_generator_c/custom_interfaces/srv/detail/serial_number__struct.h:
+
+rosidl_generator_c/custom_interfaces/srv/detail/serial_number__type_support.h:
 
 /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string.h:
 
@@ -515,6 +522,8 @@ rosidl_generator_c/custom_interfaces/srv/detail/sonar__type_support.h:
 /usr/include/x86_64-linux-gnu/bits/errno.h:
 
 /usr/include/x86_64-linux-gnu/sys/cdefs.h:
+
+rosidl_generator_c/custom_interfaces/srv/detail/serial_number__functions.h:
 
 /usr/include/python3.10/pythread.h:
 
