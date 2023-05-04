@@ -57,6 +57,7 @@ class SonarService(Node):
      
 # funcion para la comprobacion del sonar , se llama dentro de la clase Ping dada por el sonar a la funcion get_ping_enable que muestra 
 # si esta activo la señal de salida acustica, que es la que se encarga de realizar la mediciones
+
     def sonar_callback(self, request, response):
         if self.ping_device:
             if self.ping_device.get_ping_enable:
