@@ -5,7 +5,7 @@ from custom_interfaces.srv import Sonar
 
 
 #Este script realiza una simple peticion al servicio para ver la respuesta del servicio, imprime por pantalla los resultados de la peticion
- 
+#Este cliente pide una comprobacion de que el sonar este funcionando
 class Sonarasync(Node):
     def __init__(self):
         super().__init__("sonar_client_async")
