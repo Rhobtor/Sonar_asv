@@ -41,10 +41,10 @@ class SonarService(Node):
             if not self.ping_device:
                 for port in arduino_ports:
                     try:
-                        ping_device = Ping1D()
-                        ping_device.connect_serial(port, 115200)
-                        ping_device.initialize()
-                        ping_device.set_ping_enable(True)
+                        ping_device = Ping1D() 
+                        ping_device.connect_serial(port, 115200) #Nos conectamos al puerto hallado por el numero de serie
+                        ping_device.initialize()                #Inicializamos
+                        ping_device.set_ping_enable(True)       #Empieza a funcionar el sonar
                         self.ping_device = ping_device
                         self.remembered_port = port
                         self.get_logger().info(f"Connected to {port}")
@@ -59,11 +59,11 @@ class SonarService(Node):
 # si esta activo la señal de salida acustica, que es la que se encarga de realizar la mediciones
 
     def sonar_callback(self, request, response):
-        if self.ping_device:
-            if self.ping_device.get_ping_enable:
-                response.success = True
+        if self.ping_device: #Si estamos concetados realizamos el checkeo
+            if self.ping_device.get_ping_enable: #comprobamos si esta funcionando el sonar 
+                response.success = True          #confirmamos que esta fincionando
                 self.get_logger().info("Sonar working")
-            else:
+            else:                               #Si no esta funcionando, confirmamos de que no lo esta
                 response.success = False
                 self.get_logger().info("Sonar not working")
         return response
