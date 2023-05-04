@@ -16,7 +16,7 @@ class SonarService(Node):
         self.ping_device = None
         self.ping_thread = None
         self.connected = False
-        self.service = self.create_service(Sonar, "sonar", self.sonar_callback)
+        self.service = self.create_service(Sonar, "sonar", self.sonar_callback) 
         self.serial_number_service = self.create_service(SerialNumber,"get_serial_number",self.serial_number_callback)
         self.port_monitor_thread = threading.Thread(target=self.monitor_usb_port, daemon=True)
         self.port_monitor_thread.start()
@@ -40,7 +40,7 @@ class SonarService(Node):
             arduino_ports = [
                 p.device
                 for p in serial.tools.list_ports.comports()
-                if p.serial_number == self._serial_number #Numero de serie del sonar, cambiar con el que se este utilizando
+                if p.serial_number == self._serial_number #Numero de serie del sonar
             ]
             if self.remembered_port not in arduino_ports:
                 self.get_logger().info("USB device disconnected")
@@ -51,9 +51,9 @@ class SonarService(Node):
                 for port in arduino_ports:
                     try:
                         ping_device = Ping1D()
-                        ping_device.connect_serial(port, 115200)
-                        ping_device.initialize()
-                        ping_device.set_ping_enable(True)
+                        ping_device.connect_serial(port, 115200)    #Nos concetamos al puerto hallado por el numero de serie
+                        ping_device.initialize()                    #Inicializamos el sonar
+                        ping_device.set_ping_enable(True)           #El sonar empieza a funcionar
                         self.ping_device = ping_device
                         self.remembered_port = port
                         self.get_logger().info(f"Connected to {port}")
@@ -68,11 +68,11 @@ class SonarService(Node):
 # si esta activo la señal de salida acustica, que es la que se encarga de realizar la mediciones     
 
     def sonar_callback(self, request, response):
-        if self.ping_device:
-            if self.ping_device.get_ping_enable:
-                response.success = True
+        if self.ping_device:                                #Si esta concetado checkeamos el sonar
+            if self.ping_device.get_ping_enable:            #Si nos devuelve true la funcion esta trabajando
+                response.success = True                     #Actualizamos la respuesta del servicio
                 self.get_logger().info("Sonar working")
-            else:
+            else:                                           #Si no los esta,actualizamos la respuesta del servicio
                 response.success = False
                 self.get_logger().info("Sonar not working")
         return response
