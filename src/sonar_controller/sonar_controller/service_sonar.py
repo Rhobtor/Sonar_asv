@@ -23,8 +23,6 @@ class SonarService(Node):
 
 
  
- 
- 
 # funcion para buscar por los puertos USB el numero de serie del sonar, si coincide el numero de serie obtiene el puerto donde se ubica, ademas en esta fucnion lo que realizara sera una busqueda continua del sistema.
  #  Se realiza para cuando hay una desconexion del USB y a continuacion conectamos de nuevo pueda volver a funcionar sin que tengamos que levantar el servicio de nuevo. 
  # La busqueda se realiza de manera constante cuando no se encuentra el dispositivo con el numero de serie.
