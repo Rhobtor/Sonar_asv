@@ -1,2 +1,2 @@
 # Sonar_asv
-with loop
+Version con servicio adicional para la busqueda de puertos con la introduccion del numero de serie del dispositivo
