@@ -101,6 +101,8 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_introspecti
 
 
 // Include directives for member types
+// Member `value`
+// Member `confidence`
 // Member `message`
 #include "rosidl_runtime_c/string_functions.h"
 
@@ -123,7 +125,41 @@ void custom_interfaces__srv__Sonar_Response__rosidl_typesupport_introspection_c_
   custom_interfaces__srv__Sonar_Response__fini(message_memory);
 }
 
-static rosidl_typesupport_introspection_c__MessageMember custom_interfaces__srv__Sonar_Response__rosidl_typesupport_introspection_c__Sonar_Response_message_member_array[2] = {
+static rosidl_typesupport_introspection_c__MessageMember custom_interfaces__srv__Sonar_Response__rosidl_typesupport_introspection_c__Sonar_Response_message_member_array[4] = {
+  {
+    "value",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_STRING,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(custom_interfaces__srv__Sonar_Response, value),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL,  // fetch(index, &value) function pointer
+    NULL,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
+    "confidence",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_STRING,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(custom_interfaces__srv__Sonar_Response, confidence),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL,  // fetch(index, &value) function pointer
+    NULL,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
+  },
   {
     "success",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
@@ -163,7 +199,7 @@ static rosidl_typesupport_introspection_c__MessageMember custom_interfaces__srv_
 static const rosidl_typesupport_introspection_c__MessageMembers custom_interfaces__srv__Sonar_Response__rosidl_typesupport_introspection_c__Sonar_Response_message_members = {
   "custom_interfaces__srv",  // message namespace
   "Sonar_Response",  // message name
-  2,  // number of fields
+  4,  // number of fields
   sizeof(custom_interfaces__srv__Sonar_Response),
   custom_interfaces__srv__Sonar_Response__rosidl_typesupport_introspection_c__Sonar_Response_message_member_array,  // message members
   custom_interfaces__srv__Sonar_Response__rosidl_typesupport_introspection_c__Sonar_Response_init_function,  // function to initialize message memory (memory has to be allocated)

@@ -62,13 +62,45 @@ private:
 class Init_Sonar_Response_success
 {
 public:
-  Init_Sonar_Response_success()
-  : msg_(::rosidl_runtime_cpp::MessageInitialization::SKIP)
+  explicit Init_Sonar_Response_success(::custom_interfaces::srv::Sonar_Response & msg)
+  : msg_(msg)
   {}
   Init_Sonar_Response_message success(::custom_interfaces::srv::Sonar_Response::_success_type arg)
   {
     msg_.success = std::move(arg);
     return Init_Sonar_Response_message(msg_);
+  }
+
+private:
+  ::custom_interfaces::srv::Sonar_Response msg_;
+};
+
+class Init_Sonar_Response_confidence
+{
+public:
+  explicit Init_Sonar_Response_confidence(::custom_interfaces::srv::Sonar_Response & msg)
+  : msg_(msg)
+  {}
+  Init_Sonar_Response_success confidence(::custom_interfaces::srv::Sonar_Response::_confidence_type arg)
+  {
+    msg_.confidence = std::move(arg);
+    return Init_Sonar_Response_success(msg_);
+  }
+
+private:
+  ::custom_interfaces::srv::Sonar_Response msg_;
+};
+
+class Init_Sonar_Response_value
+{
+public:
+  Init_Sonar_Response_value()
+  : msg_(::rosidl_runtime_cpp::MessageInitialization::SKIP)
+  {}
+  Init_Sonar_Response_confidence value(::custom_interfaces::srv::Sonar_Response::_value_type arg)
+  {
+    msg_.value = std::move(arg);
+    return Init_Sonar_Response_confidence(msg_);
   }
 
 private:
@@ -86,7 +118,7 @@ template<>
 inline
 auto build<::custom_interfaces::srv::Sonar_Response>()
 {
-  return custom_interfaces::srv::builder::Init_Sonar_Response_success();
+  return custom_interfaces::srv::builder::Init_Sonar_Response_value();
 }
 
 }  // namespace custom_interfaces

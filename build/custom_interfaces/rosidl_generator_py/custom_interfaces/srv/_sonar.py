@@ -156,16 +156,22 @@ class Sonar_Response(metaclass=Metaclass_Sonar_Response):
     """Message class 'Sonar_Response'."""
 
     __slots__ = [
+        '_value',
+        '_confidence',
         '_success',
         '_message',
     ]
 
     _fields_and_field_types = {
+        'value': 'string',
+        'confidence': 'string',
         'success': 'boolean',
         'message': 'string',
     }
 
     SLOT_TYPES = (
+        rosidl_parser.definition.UnboundedString(),  # noqa: E501
+        rosidl_parser.definition.UnboundedString(),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.UnboundedString(),  # noqa: E501
     )
@@ -174,6 +180,8 @@ class Sonar_Response(metaclass=Metaclass_Sonar_Response):
         assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
             'Invalid arguments passed to constructor: %s' % \
             ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        self.value = kwargs.get('value', str())
+        self.confidence = kwargs.get('confidence', str())
         self.success = kwargs.get('success', bool())
         self.message = kwargs.get('message', str())
 
@@ -206,6 +214,10 @@ class Sonar_Response(metaclass=Metaclass_Sonar_Response):
     def __eq__(self, other):
         if not isinstance(other, self.__class__):
             return False
+        if self.value != other.value:
+            return False
+        if self.confidence != other.confidence:
+            return False
         if self.success != other.success:
             return False
         if self.message != other.message:
@@ -216,6 +228,32 @@ class Sonar_Response(metaclass=Metaclass_Sonar_Response):
     def get_fields_and_field_types(cls):
         from copy import copy
         return copy(cls._fields_and_field_types)
+
+    @builtins.property
+    def value(self):
+        """Message field 'value'."""
+        return self._value
+
+    @value.setter
+    def value(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, str), \
+                "The 'value' field must be of type 'str'"
+        self._value = value
+
+    @builtins.property
+    def confidence(self):
+        """Message field 'confidence'."""
+        return self._confidence
+
+    @confidence.setter
+    def confidence(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, str), \
+                "The 'confidence' field must be of type 'str'"
+        self._confidence = value
 
     @builtins.property
     def success(self):

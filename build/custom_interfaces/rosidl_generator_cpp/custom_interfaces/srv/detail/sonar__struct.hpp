@@ -145,23 +145,35 @@ struct Sonar_Response_
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
+      this->value = "";
+      this->confidence = "";
       this->success = false;
       this->message = "";
     }
   }
 
   explicit Sonar_Response_(const ContainerAllocator & _alloc, rosidl_runtime_cpp::MessageInitialization _init = rosidl_runtime_cpp::MessageInitialization::ALL)
-  : message(_alloc)
+  : value(_alloc),
+    confidence(_alloc),
+    message(_alloc)
   {
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
+      this->value = "";
+      this->confidence = "";
       this->success = false;
       this->message = "";
     }
   }
 
   // field types and members
+  using _value_type =
+    std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>;
+  _value_type value;
+  using _confidence_type =
+    std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>;
+  _confidence_type confidence;
   using _success_type =
     bool;
   _success_type success;
@@ -170,6 +182,18 @@ struct Sonar_Response_
   _message_type message;
 
   // setters for named parameter idiom
+  Type & set__value(
+    const std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>> & _arg)
+  {
+    this->value = _arg;
+    return *this;
+  }
+  Type & set__confidence(
+    const std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>> & _arg)
+  {
+    this->confidence = _arg;
+    return *this;
+  }
   Type & set__success(
     const bool & _arg)
   {
@@ -225,6 +249,12 @@ struct Sonar_Response_
   // comparison operators
   bool operator==(const Sonar_Response_ & other) const
   {
+    if (this->value != other.value) {
+      return false;
+    }
+    if (this->confidence != other.confidence) {
+      return false;
+    }
     if (this->success != other.success) {
       return false;
     }

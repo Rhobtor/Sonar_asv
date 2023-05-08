@@ -129,6 +129,36 @@ bool custom_interfaces__srv__sonar__response__convert_from_py(PyObject * _pymsg,
     assert(strncmp("custom_interfaces.srv._sonar.Sonar_Response", full_classname_dest, 43) == 0);
   }
   custom_interfaces__srv__Sonar_Response * ros_message = _ros_message;
+  {  // value
+    PyObject * field = PyObject_GetAttrString(_pymsg, "value");
+    if (!field) {
+      return false;
+    }
+    assert(PyUnicode_Check(field));
+    PyObject * encoded_field = PyUnicode_AsUTF8String(field);
+    if (!encoded_field) {
+      Py_DECREF(field);
+      return false;
+    }
+    rosidl_runtime_c__String__assign(&ros_message->value, PyBytes_AS_STRING(encoded_field));
+    Py_DECREF(encoded_field);
+    Py_DECREF(field);
+  }
+  {  // confidence
+    PyObject * field = PyObject_GetAttrString(_pymsg, "confidence");
+    if (!field) {
+      return false;
+    }
+    assert(PyUnicode_Check(field));
+    PyObject * encoded_field = PyUnicode_AsUTF8String(field);
+    if (!encoded_field) {
+      Py_DECREF(field);
+      return false;
+    }
+    rosidl_runtime_c__String__assign(&ros_message->confidence, PyBytes_AS_STRING(encoded_field));
+    Py_DECREF(encoded_field);
+    Py_DECREF(field);
+  }
   {  // success
     PyObject * field = PyObject_GetAttrString(_pymsg, "success");
     if (!field) {
@@ -175,6 +205,40 @@ PyObject * custom_interfaces__srv__sonar__response__convert_to_py(void * raw_ros
     }
   }
   custom_interfaces__srv__Sonar_Response * ros_message = (custom_interfaces__srv__Sonar_Response *)raw_ros_message;
+  {  // value
+    PyObject * field = NULL;
+    field = PyUnicode_DecodeUTF8(
+      ros_message->value.data,
+      strlen(ros_message->value.data),
+      "replace");
+    if (!field) {
+      return NULL;
+    }
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "value", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // confidence
+    PyObject * field = NULL;
+    field = PyUnicode_DecodeUTF8(
+      ros_message->confidence.data,
+      strlen(ros_message->confidence.data),
+      "replace");
+    if (!field) {
+      return NULL;
+    }
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "confidence", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
   {  // success
     PyObject * field = NULL;
     field = PyBool_FromLong(ros_message->success ? 1 : 0);

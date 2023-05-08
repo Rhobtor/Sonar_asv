@@ -1,0 +1,18 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/aceti/sonar/Sonar_asv/install/sonar_controller/lib/python3.10/site-packages",
+        "/home/aceti/sonar/Sonar_asv/install/custom_interfaces/local/lib/python3.10/dist-packages",
+        "/home/aceti/head/Head_asv/install/add_integers/lib/python3.10/site-packages",
+        "/home/aceti/head/Head_asv/install/head_controller/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/aceti/sonar/Sonar_asv/install/sonar_controller/lib/python3.10/site-packages",
+        "/home/aceti/sonar/Sonar_asv/install/custom_interfaces/local/lib/python3.10/dist-packages",
+        "/home/aceti/head/Head_asv/install/add_integers/lib/python3.10/site-packages",
+        "/home/aceti/head/Head_asv/install/head_controller/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}

@@ -14,6 +14,10 @@ module custom_interfaces {
     @verbatim (language="comment", text=
       "response")
     struct Sonar_Response {
+      string value;
+
+      string confidence;
+
       boolean success;
 
       string message;

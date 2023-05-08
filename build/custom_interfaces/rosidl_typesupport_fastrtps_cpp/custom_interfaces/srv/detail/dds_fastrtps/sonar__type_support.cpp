@@ -228,6 +228,10 @@ cdr_serialize(
   const custom_interfaces::srv::Sonar_Response & ros_message,
   eprosima::fastcdr::Cdr & cdr)
 {
+  // Member: value
+  cdr << ros_message.value;
+  // Member: confidence
+  cdr << ros_message.confidence;
   // Member: success
   cdr << (ros_message.success ? true : false);
   // Member: message
@@ -241,6 +245,12 @@ cdr_deserialize(
   eprosima::fastcdr::Cdr & cdr,
   custom_interfaces::srv::Sonar_Response & ros_message)
 {
+  // Member: value
+  cdr >> ros_message.value;
+
+  // Member: confidence
+  cdr >> ros_message.confidence;
+
   // Member: success
   {
     uint8_t tmp;
@@ -267,6 +277,14 @@ get_serialized_size(
   (void)padding;
   (void)wchar_size;
 
+  // Member: value
+  current_alignment += padding +
+    eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
+    (ros_message.value.size() + 1);
+  // Member: confidence
+  current_alignment += padding +
+    eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
+    (ros_message.confidence.size() + 1);
   // Member: success
   {
     size_t item_size = sizeof(ros_message.success);
@@ -298,6 +316,32 @@ max_serialized_size_Sonar_Response(
   full_bounded = true;
   is_plain = true;
 
+
+  // Member: value
+  {
+    size_t array_size = 1;
+
+    full_bounded = false;
+    is_plain = false;
+    for (size_t index = 0; index < array_size; ++index) {
+      current_alignment += padding +
+        eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
+        1;
+    }
+  }
+
+  // Member: confidence
+  {
+    size_t array_size = 1;
+
+    full_bounded = false;
+    is_plain = false;
+    for (size_t index = 0; index < array_size; ++index) {
+      current_alignment += padding +
+        eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
+        1;
+    }
+  }
 
   // Member: success
   {

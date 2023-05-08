@@ -1,4 +1,6 @@
 
 #response
+string value
+string confidence
 bool success
 string message

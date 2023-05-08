@@ -236,6 +236,8 @@ custom_interfaces__srv__Sonar_Request__Sequence__copy(
 
 
 // Include directives for member types
+// Member `value`
+// Member `confidence`
 // Member `message`
 #include "rosidl_runtime_c/string_functions.h"
 
@@ -243,6 +245,16 @@ bool
 custom_interfaces__srv__Sonar_Response__init(custom_interfaces__srv__Sonar_Response * msg)
 {
   if (!msg) {
+    return false;
+  }
+  // value
+  if (!rosidl_runtime_c__String__init(&msg->value)) {
+    custom_interfaces__srv__Sonar_Response__fini(msg);
+    return false;
+  }
+  // confidence
+  if (!rosidl_runtime_c__String__init(&msg->confidence)) {
+    custom_interfaces__srv__Sonar_Response__fini(msg);
     return false;
   }
   // success
@@ -260,6 +272,10 @@ custom_interfaces__srv__Sonar_Response__fini(custom_interfaces__srv__Sonar_Respo
   if (!msg) {
     return;
   }
+  // value
+  rosidl_runtime_c__String__fini(&msg->value);
+  // confidence
+  rosidl_runtime_c__String__fini(&msg->confidence);
   // success
   // message
   rosidl_runtime_c__String__fini(&msg->message);
@@ -269,6 +285,18 @@ bool
 custom_interfaces__srv__Sonar_Response__are_equal(const custom_interfaces__srv__Sonar_Response * lhs, const custom_interfaces__srv__Sonar_Response * rhs)
 {
   if (!lhs || !rhs) {
+    return false;
+  }
+  // value
+  if (!rosidl_runtime_c__String__are_equal(
+      &(lhs->value), &(rhs->value)))
+  {
+    return false;
+  }
+  // confidence
+  if (!rosidl_runtime_c__String__are_equal(
+      &(lhs->confidence), &(rhs->confidence)))
+  {
     return false;
   }
   // success
@@ -290,6 +318,18 @@ custom_interfaces__srv__Sonar_Response__copy(
   custom_interfaces__srv__Sonar_Response * output)
 {
   if (!input || !output) {
+    return false;
+  }
+  // value
+  if (!rosidl_runtime_c__String__copy(
+      &(input->value), &(output->value)))
+  {
+    return false;
+  }
+  // confidence
+  if (!rosidl_runtime_c__String__copy(
+      &(input->confidence), &(output->confidence)))
+  {
     return false;
   }
   // success

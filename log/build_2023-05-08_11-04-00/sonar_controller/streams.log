@@ -1,0 +1,25 @@
+[0.531s] Invoking command in '/home/aceti/sonar/Sonar_asv/src/sonar_controller': PYTHONPATH=/home/aceti/sonar/Sonar_asv/build/sonar_controller/prefix_override:/home/aceti/sonar/Sonar_asv/install/sonar_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/sonar_controller build --build-base /home/aceti/sonar/Sonar_asv/build/sonar_controller/build install --record /home/aceti/sonar/Sonar_asv/build/sonar_controller/install.log --single-version-externally-managed
+[0.730s] running egg_info
+[0.731s] writing ../../build/sonar_controller/sonar_controller.egg-info/PKG-INFO
+[0.731s] writing dependency_links to ../../build/sonar_controller/sonar_controller.egg-info/dependency_links.txt
+[0.731s] writing entry points to ../../build/sonar_controller/sonar_controller.egg-info/entry_points.txt
+[0.731s] writing requirements to ../../build/sonar_controller/sonar_controller.egg-info/requires.txt
+[0.731s] writing top-level names to ../../build/sonar_controller/sonar_controller.egg-info/top_level.txt
+[0.733s] reading manifest file '../../build/sonar_controller/sonar_controller.egg-info/SOURCES.txt'
+[0.733s] writing manifest file '../../build/sonar_controller/sonar_controller.egg-info/SOURCES.txt'
+[0.733s] running build
+[0.733s] running build_py
+[0.734s] copying sonar_controller/service_sonar.py -> /home/aceti/sonar/Sonar_asv/build/sonar_controller/build/lib/sonar_controller
+[0.734s] running install
+[0.734s] running install_lib
+[0.734s] copying /home/aceti/sonar/Sonar_asv/build/sonar_controller/build/lib/sonar_controller/service_sonar.py -> /home/aceti/sonar/Sonar_asv/install/sonar_controller/lib/python3.10/site-packages/sonar_controller
+[0.735s] byte-compiling /home/aceti/sonar/Sonar_asv/install/sonar_controller/lib/python3.10/site-packages/sonar_controller/service_sonar.py to service_sonar.cpython-310.pyc
+[0.736s] running install_data
+[0.736s] running install_egg_info
+[0.737s] removing '/home/aceti/sonar/Sonar_asv/install/sonar_controller/lib/python3.10/site-packages/sonar_controller-0.0.0-py3.10.egg-info' (and everything under it)
+[0.737s] Copying ../../build/sonar_controller/sonar_controller.egg-info to /home/aceti/sonar/Sonar_asv/install/sonar_controller/lib/python3.10/site-packages/sonar_controller-0.0.0-py3.10.egg-info
+[0.738s] running install_scripts
+[0.753s] Installing sonar_client script to /home/aceti/sonar/Sonar_asv/install/sonar_controller/lib/sonar_controller
+[0.753s] Installing sonar_service script to /home/aceti/sonar/Sonar_asv/install/sonar_controller/lib/sonar_controller
+[0.753s] writing list of installed files to '/home/aceti/sonar/Sonar_asv/build/sonar_controller/install.log'
+[0.777s] Invoked command in '/home/aceti/sonar/Sonar_asv/src/sonar_controller' returned '0': PYTHONPATH=/home/aceti/sonar/Sonar_asv/build/sonar_controller/prefix_override:/home/aceti/sonar/Sonar_asv/install/sonar_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/sonar_controller build --build-base /home/aceti/sonar/Sonar_asv/build/sonar_controller/build install --record /home/aceti/sonar/Sonar_asv/build/sonar_controller/install.log --single-version-externally-managed

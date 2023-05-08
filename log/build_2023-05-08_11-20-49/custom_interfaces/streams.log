@@ -1,0 +1,55 @@
+[0.013s] Invoking command in '/home/aceti/sonar/Sonar_asv/build/custom_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aceti/sonar/Sonar_asv/install/sonar_controller:/home/aceti/head/Head_asv/install/add_integers:/home/aceti/head/Head_asv/install/head_controller:/opt/ros/humble /usr/bin/cmake --build /home/aceti/sonar/Sonar_asv/build/custom_interfaces -- -j8 -l8
+[0.028s] -- Found ament_cmake: 1.3.3 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.141s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.142s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.144s] -- Found rosidl_adapter: 3.1.4 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.169s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.319s] [31mCMake Error at /opt/ros/humble/share/rosidl_adapter/cmake/rosidl_adapt_interfaces.cmake:59 (message):
+[0.319s]   execute_process(/usr/bin/python3.10 -m rosidl_adapter --package-name
+[0.319s]   custom_interfaces --arguments-file
+[0.319s]   /home/aceti/sonar/Sonar_asv/build/custom_interfaces/rosidl_adapter__arguments__custom_interfaces.json
+[0.319s]   --output-dir
+[0.319s]   /home/aceti/sonar/Sonar_asv/build/custom_interfaces/rosidl_adapter/custom_interfaces
+[0.320s]   --output-file
+[0.320s]   /home/aceti/sonar/Sonar_asv/build/custom_interfaces/rosidl_adapter/custom_interfaces.idls)
+[0.320s]   returned error code 1:
+[0.320s] 
+[0.320s]   Error processing 'int message' of 'custom_interfaces/Sonar_Response':
+[0.320s]   ''int' is an invalid message name.  It should have the pattern
+[0.320s]   '^[A-Z][A-Za-z0-9]*$''
+[0.320s] 
+[0.320s]   Traceback (most recent call last):
+[0.320s] 
+[0.320s]     File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+[0.320s]       return _run_code(code, main_globals, None,
+[0.320s]     File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+[0.320s]       exec(code, run_globals)
+[0.320s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/__main__.py", line 19, in <module>
+[0.320s]       sys.exit(main())
+[0.320s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/main.py", line 53, in main
+[0.320s]       abs_idl_file = convert_to_idl(
+[0.320s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/__init__.py", line 24, in convert_to_idl
+[0.320s]       return convert_srv_to_idl(
+[0.320s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/srv/__init__.py", line 28, in convert_srv_to_idl
+[0.320s]       srv = parse_service_string(package_name, input_file.stem, content)
+[0.321s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/parser.py", line 863, in parse_service_string
+[0.321s]       response_message = parse_message_string(
+[0.321s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/parser.py", line 520, in parse_message_string
+[0.321s]       Type(type_string, context_package_name=pkg_name),
+[0.321s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/parser.py", line 277, in __init__
+[0.321s]       super(Type, self).__init__(
+[0.321s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/parser.py", line 205, in __init__
+[0.321s]       raise InvalidResourceName(
+[0.321s] 
+[0.321s]   rosidl_adapter.parser.InvalidResourceName: 'int' is an invalid message
+[0.321s]   name.  It should have the pattern '^[A-Z][A-Za-z0-9]*$'
+[0.321s] 
+[0.321s] Call Stack (most recent call first):
+[0.321s]   /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:130 (rosidl_adapt_interfaces)
+[0.321s]   CMakeLists.txt:23 (rosidl_generate_interfaces)
+[0.321s] 
+[0.321s] [0m
+[0.321s] -- Configuring incomplete, errors occurred!
+[0.321s] See also "/home/aceti/sonar/Sonar_asv/build/custom_interfaces/CMakeFiles/CMakeOutput.log".
+[0.323s] gmake: *** [Makefile:747: cmake_check_build_system] Error 1
+[0.324s] Invoked command in '/home/aceti/sonar/Sonar_asv/build/custom_interfaces' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aceti/sonar/Sonar_asv/install/sonar_controller:/home/aceti/head/Head_asv/install/add_integers:/home/aceti/head/Head_asv/install/head_controller:/opt/ros/humble /usr/bin/cmake --build /home/aceti/sonar/Sonar_asv/build/custom_interfaces -- -j8 -l8

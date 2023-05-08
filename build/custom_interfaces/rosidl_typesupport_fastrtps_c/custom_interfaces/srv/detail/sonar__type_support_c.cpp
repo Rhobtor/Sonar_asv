@@ -211,8 +211,8 @@ extern "C"
 {
 #endif
 
-#include "rosidl_runtime_c/string.h"  // message
-#include "rosidl_runtime_c/string_functions.h"  // message
+#include "rosidl_runtime_c/string.h"  // confidence, message, value
+#include "rosidl_runtime_c/string_functions.h"  // confidence, message, value
 
 // forward declare type support functions
 
@@ -228,6 +228,34 @@ static bool _Sonar_Response__cdr_serialize(
     return false;
   }
   const _Sonar_Response__ros_msg_type * ros_message = static_cast<const _Sonar_Response__ros_msg_type *>(untyped_ros_message);
+  // Field name: value
+  {
+    const rosidl_runtime_c__String * str = &ros_message->value;
+    if (str->capacity == 0 || str->capacity <= str->size) {
+      fprintf(stderr, "string capacity not greater than size\n");
+      return false;
+    }
+    if (str->data[str->size] != '\0') {
+      fprintf(stderr, "string not null-terminated\n");
+      return false;
+    }
+    cdr << str->data;
+  }
+
+  // Field name: confidence
+  {
+    const rosidl_runtime_c__String * str = &ros_message->confidence;
+    if (str->capacity == 0 || str->capacity <= str->size) {
+      fprintf(stderr, "string capacity not greater than size\n");
+      return false;
+    }
+    if (str->data[str->size] != '\0') {
+      fprintf(stderr, "string not null-terminated\n");
+      return false;
+    }
+    cdr << str->data;
+  }
+
   // Field name: success
   {
     cdr << (ros_message->success ? true : false);
@@ -259,6 +287,38 @@ static bool _Sonar_Response__cdr_deserialize(
     return false;
   }
   _Sonar_Response__ros_msg_type * ros_message = static_cast<_Sonar_Response__ros_msg_type *>(untyped_ros_message);
+  // Field name: value
+  {
+    std::string tmp;
+    cdr >> tmp;
+    if (!ros_message->value.data) {
+      rosidl_runtime_c__String__init(&ros_message->value);
+    }
+    bool succeeded = rosidl_runtime_c__String__assign(
+      &ros_message->value,
+      tmp.c_str());
+    if (!succeeded) {
+      fprintf(stderr, "failed to assign string into field 'value'\n");
+      return false;
+    }
+  }
+
+  // Field name: confidence
+  {
+    std::string tmp;
+    cdr >> tmp;
+    if (!ros_message->confidence.data) {
+      rosidl_runtime_c__String__init(&ros_message->confidence);
+    }
+    bool succeeded = rosidl_runtime_c__String__assign(
+      &ros_message->confidence,
+      tmp.c_str());
+    if (!succeeded) {
+      fprintf(stderr, "failed to assign string into field 'confidence'\n");
+      return false;
+    }
+  }
+
   // Field name: success
   {
     uint8_t tmp;
@@ -299,6 +359,14 @@ size_t get_serialized_size_custom_interfaces__srv__Sonar_Response(
   (void)padding;
   (void)wchar_size;
 
+  // field.name value
+  current_alignment += padding +
+    eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
+    (ros_message->value.size + 1);
+  // field.name confidence
+  current_alignment += padding +
+    eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
+    (ros_message->confidence.size + 1);
   // field.name success
   {
     size_t item_size = sizeof(ros_message->success);
@@ -336,6 +404,30 @@ size_t max_serialized_size_custom_interfaces__srv__Sonar_Response(
   full_bounded = true;
   is_plain = true;
 
+  // member: value
+  {
+    size_t array_size = 1;
+
+    full_bounded = false;
+    is_plain = false;
+    for (size_t index = 0; index < array_size; ++index) {
+      current_alignment += padding +
+        eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
+        1;
+    }
+  }
+  // member: confidence
+  {
+    size_t array_size = 1;
+
+    full_bounded = false;
+    is_plain = false;
+    for (size_t index = 0; index < array_size; ++index) {
+      current_alignment += padding +
+        eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
+        1;
+    }
+  }
   // member: success
   {
     size_t array_size = 1;

@@ -42,6 +42,12 @@ def main(args=None):
                 move_client.get_logger().info(
                     f"Result of check {response.success}"
                 )
+                move_client.get_logger().info(
+                    f"Result of check {response.value}"
+                )
+                move_client.get_logger().info(
+                    f"Result of check {response.confidence}"
+                )
                 
             break
         move_client.destroy_node()

@@ -37,12 +37,16 @@ typedef struct custom_interfaces__srv__Sonar_Request__Sequence
 // Constants defined in the message
 
 // Include directives for member types
+// Member 'value'
+// Member 'confidence'
 // Member 'message'
 #include "rosidl_runtime_c/string.h"
 
 /// Struct defined in srv/Sonar in the package custom_interfaces.
 typedef struct custom_interfaces__srv__Sonar_Response
 {
+  rosidl_runtime_c__String value;
+  rosidl_runtime_c__String confidence;
   bool success;
   rosidl_runtime_c__String message;
 } custom_interfaces__srv__Sonar_Response;

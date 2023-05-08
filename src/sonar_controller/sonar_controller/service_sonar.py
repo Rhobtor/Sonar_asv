@@ -6,7 +6,7 @@ import serial
 import serial.tools.list_ports
 from custom_interfaces.srv import Sonar
 import threading
-
+from std_msgs.msg import Float32
 
 class SonarService(Node):
     def __init__(self):
@@ -14,6 +14,7 @@ class SonarService(Node):
         self.remembered_port = None
         self.ping_device = None
         self.ping_thread = None
+        self.declare_parameter('serial_number', "DM00R2J8")
         self.service = self.create_service(Sonar, "sonar", self.sonar_callback)
         self.port_monitor_thread = threading.Thread(target=self.monitor_usb_port, daemon=True)
         self.port_monitor_thread.start()
@@ -31,7 +32,7 @@ class SonarService(Node):
             arduino_ports = [
                 p.device
                 for p in serial.tools.list_ports.comports()
-                if p.serial_number == "DM00R2J8" # Numero de serie del sonar, cambiar al que se este utilizando
+                if p.serial_number == self.get_parameter('serial_number').get_parameter_value().string_value # Numero de serie del sonar, cambiar al que se este utilizando
             ]
             if self.remembered_port not in arduino_ports:
                 self.get_logger().info("USB device disconnected")
@@ -61,7 +62,10 @@ class SonarService(Node):
     def sonar_callback(self, request, response):
         if self.ping_device: #Si estamos concetados realizamos el checkeo
             if self.ping_device.get_ping_enable: #comprobamos si esta funcionando el sonar 
+                data=self.ping_device.get_distance()
                 response.success = True          #confirmamos que esta fincionando
+                response.value=str(data["distance"])
+                response.confidence=str(data["confidence"])
                 self.get_logger().info("Sonar working")
             else:                               #Si no esta funcionando, confirmamos de que no lo esta
                 response.success = False
